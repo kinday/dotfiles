@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Leonard Kinday
+  email = leonard@kinday.ru
+[core]
+  excludesfile = /Users/kinday/.gitignore_global
+  editor = vim
+[commit]
+  template = /Users/kinday/.stCommitMsg
+  gpgsign = true
+[gpg]
+  program = gpg2
+[alias]
+  amend = commit --amend
+  changestats = diff --shortstat $(git merge-base origin/master HEAD)
+  discard = checkout --
+  pause = commit --no-verify -u -am "WIP"
+  please = push --force-with-lease
+  publish = push -u origin
+  resume = reset HEAD~
+  uncommit = reset --mixed HEAD~
+  unstage = reset -q HEAD --
+[rebase]
+  autosquash = true
